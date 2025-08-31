@@ -44,9 +44,9 @@ export default async function IndexPage() {
         </div>
 
         <div className="divider mt-16 mb-16">
-          <a href="./allposts" className="btn btn-outline btn-accent rounded-lg">
+          <Link href="/allposts" className="btn btn-outline btn-accent rounded-lg">
             View All Posts
-          </a>
+          </Link>
         </div>
 
         {/* Browse by Category Section */}
