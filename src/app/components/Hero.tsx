@@ -25,7 +25,7 @@ export default async function Hero()  {
                     <p className="mb-5">
                         {hero.subheadline}
                     </p>
-                    <a href={hero.ctaLink} className="btn btn-outline btn-success rounded-lg">{hero.ctaText}</a>
+                    <a href={hero.ctaLink} className="btn btn-outline btn-accent rounded-lg">{hero.ctaText}</a>
                 </div>
             </div>
         </div>

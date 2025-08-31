@@ -23,7 +23,7 @@ export default async function IndexPage() {
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 mt-8">
           {posts.slice(0, 2).map((post) => (
-            <div className="card card-side bg-base-100 shadow-sm">
+            <div className="card card-side bg-base-100 shadow-sm" key={post._id}>
               <figure>
                 <img
                   className="h-64 w-64 object-cover"
@@ -35,13 +35,18 @@ export default async function IndexPage() {
                 <Link href={`${post.slug.current}`}>
                   <h2 className="card-title mb-3">{post.title}</h2>
                 </Link>
-                <p></p>
                 <div className="card-actions justify-end">
                   <div className="badge text-gray-500">Published: {new Date(post.publishedAt).toLocaleDateString()}</div>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="divider mt-16 mb-16">
+          <a href="./allposts" className="btn btn-outline btn-accent rounded-lg">
+            View All Posts
+          </a>
         </div>
 
         {/* Browse by Category Section */}
@@ -53,6 +58,7 @@ export default async function IndexPage() {
             publishedAt: post.publishedAt,
             image: post.image,
             category: post.category,
+            body: post.body ?? "", // Ensure 'body' is present, fallback to empty string if missing
           }))}
         />
       </main>
